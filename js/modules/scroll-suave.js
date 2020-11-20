@@ -6,6 +6,8 @@ export default class ScrollSuave {
     } else {
       this.options = options;
     }
+
+    this.scrollToSection = this.scrollToSection.bind(this);
   }
 
   scrollToSection(event) {
@@ -13,9 +15,6 @@ export default class ScrollSuave {
     const href = event.currentTarget.getAttribute('href');
     const section = document.querySelector(href);
     section.scrollIntoView(this.options);
-
-    this.scrollToSection = this.scrollToSection.bind(this);
-    console.log(this.scrollToSection);
   }
 
   addLinkEvent() {
